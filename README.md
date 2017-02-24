@@ -12,11 +12,16 @@ Cell展开收起动效(OC实现)
 首先,下载Demo,把CCFoldCell文件夹拖入你的工程,创建一个新的Cell继承CCFoldCell,新Cell必须要用Xib.
 
 然后,在Xib中选中你的Cell
+
+
 ![image](https://github.com/bref-Chan/CCFoldCell/blob/master/image/CheckCell.png) 
+
 
 在右边属性设置里面设置FoldCell属性
 
+
 ![image](https://github.com/bref-Chan/CCFoldCell/blob/master/image/SetCellProperty.png) 
+
 
 >Item Count属性表示翻转动画时,你的内容视图分成多少块翻转视图来进行翻转,值越大,则每块翻转视图越小,反之亦然.注意,值必须设置成2以上
 >BackViewColor属性表示你的翻转视图的背后的颜色是什么.
@@ -24,11 +29,15 @@ Cell展开收起动效(OC实现)
 然后用AutoLayout进行Cell的布局,布局的规范是,翻转前的视图称为Foreground视图,将翻转完成时显示的视图称为Contener视图
 所以你需要在Cell中布局2个视图,注意2个视图之间不能有任何的相关约束,顶部约束都必须相对于Cell的contentView来进行
 
+
 ![image](https://github.com/bref-Chan/CCFoldCell/blob/master/image/2view.png) 
+
 
 然后分别将这2个视图与containerView和foregroundView Outlets绑定,然后将2个视图相对于Cell的contentView的顶部约束和 containerViewTop 和 foregroundViewTop Outlets绑定
 
+
 ![image](https://github.com/bref-Chan/CCFoldCell/blob/master/image/bindOutlets.png) 
+
 
 #### Cell 方法重写
 
@@ -49,11 +58,14 @@ Cell展开收起动效(OC实现)
 ####动画的开始时机
 
 在UITableView的
+
 ```
 - (void)tableView:(UITableView *)tableView willDisplayCell:(DemoCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 
 ```
+
 中进行Cell样式的展示,根据Cell的高度来判断Cell是否进行了翻转,具体代码为
+
 ```
 - (void)tableView:(UITableView *)tableView willDisplayCell:(DemoCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -72,13 +84,16 @@ Cell展开收起动效(OC实现)
     [cell setNumber:indexPath.row];
 }
 ```
-然后在
+
+然后在UITableViewDelegate
+
 ```
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 ```
 
 中进行Cell的动画触发
 使用Cell的
+
 ```
 - (void)selectedAnimationByIsSelected:(BOOL)isSelected animated:(BOOL)animated completion:(void(^)())completion;
 ```
@@ -86,6 +101,7 @@ Cell展开收起动效(OC实现)
 方法来设置Cell是否是翻转状态,是否进行动画.
 
 Demo中的实现为
+
 ```
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -122,4 +138,4 @@ Demo中的实现为
     
 ### 大功告成
   
-  现在就可以运行项目,欣赏流畅的Cell折叠效果了
+现在就可以运行项目,欣赏流畅的Cell折叠效果了

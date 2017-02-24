@@ -660,7 +660,7 @@
                 <outlet property="foregroundViewTop" destination="v88-WE-wG7" id="Rch-1x-SZS"/>
                 <outlet property="openNumberLabel" destination="bDf-C9-ZhK" id="gxk-DA-BlB"/>
             </connections>
-            <point key="canvasLocation" x="131.5" y="209"/>
+            <point key="canvasLocation" x="169" y="97"/>
         </tableViewCell>
     </objects>
     <resources>

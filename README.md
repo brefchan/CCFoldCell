@@ -1,5 +1,5 @@
 # CCFoldCell
-Cell展开收起动效(OC实现)
+Cell折叠动效(OC实现)
 之前在https://github.com/Ramotion/folding-cell 看到了用Swift实现的很炫酷的Cell折叠效果,准备用在公司的项目里面,可惜公司的项目是OC实现,所以,自己动手丰衣足食,我用OC实现了同样的效果
 
 

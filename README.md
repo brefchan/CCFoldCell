@@ -2,6 +2,7 @@
 Cell折叠动效(OC实现)
 之前在https://github.com/Ramotion/folding-cell 看到了用Swift实现的很炫酷的Cell折叠效果,准备用在公司的项目里面,可惜公司的项目是OC实现,所以,自己动手丰衣足食,我用OC实现了同样的效果
 
+如果觉得有用,不妨给个Star呗~
 
 ###项目演示
 ![image](https://github.com/bref-Chan/CCFoldCell/blob/master/image/CCFoldCell.gif)   
